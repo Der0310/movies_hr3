@@ -48,7 +48,7 @@ const setGenres = catchError(async(req, res) => {
 const setActors = catchError(async(req, res) => {
     const { id } = req.params
     const movie = await Movie.findByPk(id)
-    await movie.setGenres(req.body)
+    await movie.setActors(req.body)
     const actor = await movie.getActors()
     return res.json(actor)
 });

@@ -3,9 +3,6 @@ const Actor = require('./Actor')
 const Director = require('./Director')
 const Genre = require('./Genre')
 
-Actor.belongsTo(Movie)
-Movie.hasMany(Actor);
-
 Director.belongsToMany(Genre, {through:'genreDirector'})
 Genre.belongsToMany(Director, {through:'genreDirector'});
 
